@@ -1,0 +1,28 @@
+{
+    "name": "NawabCaptureDetails",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+       },
+    "icons": {
+        "128": "logo.png"
+    },
+
+    "permissions": ["scripting", "tabs", "activeTab"],
+    
+    "host_permissions": [
+        "https://www.google.com/"
+    ],
+
+    "content_scripts":[
+        {
+            "matches" : ["<all_urls>"],
+            "js" : ["jquery-3.6.4.min.js","contentScript.js"]
+        }
+    ]
+}
